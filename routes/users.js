@@ -16,6 +16,7 @@ router.get('/new', (req, res) => {
 router
    .route("/:id")
    .get((req, res) => {
+      console.log(req.user)
       res.send(`GET user with id ${req.params.id}`)
    })
    .put((req, res) => {
@@ -25,11 +26,15 @@ router
       res.send(`GET user with id ${req.params.id}`)
    })
 
+const users = [{name: "kyle"}, {name: "Sally"}]
 // middleware - a piece of code that runs inbetween a sent request and the response to that request
 // e.g router.params is a middleware
 router.param('id', (req, res, next, id) => {
-   console.log(id)
+   req.user = users[id]["name"];
+   console.log(req.user)
+   next()
 })
+
 
 
 module.exports = router
