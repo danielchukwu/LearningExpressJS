@@ -27,7 +27,9 @@ router
 
 // middleware - a piece of code that runs inbetween a sent request and the response to that request
 // e.g router.params is a middleware
-
+router.param('id', (req, res, next, id) => {
+   console.log(id)
+})
 
 
 module.exports = router
