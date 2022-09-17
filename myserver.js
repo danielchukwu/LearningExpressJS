@@ -1,4 +1,5 @@
 const express = require("express");
+const userRouter = require("./routes/users");
 
 const app = express();
 
@@ -10,12 +11,8 @@ app.get('/', (req, res) => {
    res.render('index');
 })
 
-app.get('/users', (req, res) => {
-   res.send('USERS HOME')
-})
+app.use('/users', userRouter)
 
-app.get('/users/new', (req, res) => {
-   res.send('Add new users')
-})
+
 
 app.listen(3000);
