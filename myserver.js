@@ -14,4 +14,8 @@ app.get('/users', (req, res) => {
    res.send('USERS HOME')
 })
 
+app.get('/users/new', (req, res) => {
+   res.send('Add new users')
+})
+
 app.listen(3000);
