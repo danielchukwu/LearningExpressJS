@@ -30,7 +30,7 @@ const users = [{name: "kyle"}, {name: "Sally"}]
 // middleware - a piece of code that runs inbetween a sent request and the response to that request
 // e.g router.params is a middleware
 router.param('id', (req, res, next, id) => {
-   req.user = users[id]["name"];
+   req.user = users[id];
    console.log(req.user)
    next()
 })
