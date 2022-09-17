@@ -10,4 +10,8 @@ app.get('/', (req, res) => {
    res.render('index');
 })
 
+app.get('/users', (req, res) => {
+   res.send('USERS HOME')
+})
+
 app.listen(3000);
