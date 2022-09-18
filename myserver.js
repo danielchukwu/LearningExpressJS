@@ -12,8 +12,8 @@ app.get('/', (req, res) => {
    res.render('index');
 })
 
-app.use('/users', userRouter)
 
+app.use('/users', userRouter)
 function showurl (req, res, next) {
    console.log(req.originalUrl)
    next()
